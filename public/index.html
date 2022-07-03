@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../dest/css/sass/style.css">
+  <link rel="stylesheet" href="../dest/css/sass/topo.css">
+  <link rel="stylesheet" href="../dest/css/sass/navbar.css">
+  <link rel="stylesheet" href="../dest/slicknav/slicknav.css">
+  <link rel="stylesheet" href="../dest/css/sass/logo.css">
+  <link rel="stylesheet" href="../dest/css/sass/aside.css">
+  <link rel="stylesheet" href="../dest/css/sass/grid.css">
+  <link rel="stylesheet" href="../dest/css/sass/footer.css">
+
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+  <title>Document</title>
+</head>
+<header>
+  <!– Begin top ->
+    <div class="topo container-fluid">
+      <div class="container d-flex justify-content-end">
+        <a alt="Acesse sua conta" href="#">Acesse sua conta</a>
+        <span>ou</span>
+        <a alt="Cadastre-se" href="#">Cadastre-se</a>
+      </div>
+    </div>
+    <!– End top ->
+
+      <!– Begin Logo Search ->
+        <div class="logo">
+          <div class="container">
+            <figure>
+              <img src="./media/logo.png" alt="">
+              <!– I dont finded the logo, so i maked a print screen ->
+            </figure>
+            <form>
+              <input type="search">
+              <button type="submit">
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+        <!– End Logo Search ->
+
+          <!– Begin nav ->
+            <div class="container-fluid">
+              <nav id="menu-nav">
+                <ul>
+                </ul>
+              </nav>
+              <nav class="navbar">
+                <div class="container">
+                  <ul class="navbar-nav">
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <!– End nav ->
+
+</header>
+
+<body>
+  <section class="container section-aside">
+    <aside class="aside-grid">
+      <nav>
+        <ul class="aside-nav">
+        </ul>
+      </nav>
+    </aside>
+    <div class="image bg-gray">
+    </div>
+    <div class="text">
+      <br>
+      <h1>Seja bem-vindo!</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+        rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+        eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+        consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+        quaerat voluptatem.</p>
+    </div>
+  </section>
+</body>
+<footer class="container">
+  <script src="../src/js/jquery-3.6.0.min.js"></script>
+  <script src="../dest/slicknav/jquery.slicknav.js"></script>
+
+  <script type="module">
+    import { asideItem } from '../src/js/menu_item.js'
+    asideItem('.navbar-nav');
+    asideItem('.aside-nav');
+
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('#menu-nav').slicknav();
+    });
+  </script>
+</footer>
+
+</html>

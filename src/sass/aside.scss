@@ -1,0 +1,23 @@
+@import '_variables';
+.aside-grid{
+    background-color: $ligth-gray-color;
+    nav{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        a{
+            text-decoration: none;
+            color: #000000;
+            font-size: $medium-large-font-size;
+        }
+    }
+}
+
+
+@media only screen  and (max-width:768px) {
+    .aside-grid{
+        display: none;
+    }
+
+}

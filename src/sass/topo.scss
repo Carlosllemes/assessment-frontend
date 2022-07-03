@@ -1,0 +1,23 @@
+@import '_variables.scss';
+
+.topo{
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: $dark-color;
+    a{
+        color: #fff;
+        font-weight: bolder;
+    }
+    span{
+        color:#fff;
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+}
+
+@media only screen  and (max-width:768px) {
+   .justify-content-end{
+    justify-content: center;
+   }
+
+}

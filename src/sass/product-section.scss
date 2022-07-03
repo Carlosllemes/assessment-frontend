@@ -1,0 +1,105 @@
+@import '_variables.scss';
+
+.product-section {
+    h2 {
+        color: $title-color;
+        font-size: $extra-large-font-size;
+        margin-bottom: 1rem;
+    }
+
+    i {
+        font-size: $large-font-size;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+
+    label {
+        font-size: $small-font-size;
+        color: $gray-color;
+    }
+
+    select {
+        margin-top: 5px;
+        width: 216px;
+        border: $main-border;
+        font-size: 14px;
+        padding: 2px;
+        box-sizing: border-box;
+
+        option {
+            color: red;
+        }
+    }
+
+
+    .product-content {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+
+        .cardProduct {
+            margin-top: 5px;
+            text-align: center;
+            height: 365px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-transform: uppercase;
+            
+            p{
+                font-size: 21px;
+                font-weight: bolder;
+                color:$subtitle-color;
+            }
+
+            .price-content{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row-reverse;
+
+                :nth-child(2){
+                    font-size: $medium-font-size;
+                    color: $gray-color;
+                    margin-right: 10px;
+                    text-decoration: line-through;
+                }
+            }
+            
+            figure{
+                figcaption{
+                    margin-top: 10px;
+                    color: $dark-gray-color;
+                    font-size: $medium-font-size;
+                }
+            }
+            
+            a{
+                display: block;
+                background-color: $primary-color;
+                padding: 10px;
+                box-sizing: border-box;
+                text-decoration: none;
+                color: #fff;
+                font-size: $medium-large-font-size;
+                border-radius: 5px;
+                font-weight: bolder;
+            }
+
+
+            img {
+                border: $main-border;
+                object-fit: cover;
+                display: block;
+                width: 232px;
+                height: 232px;
+                padding: 5px;
+            }
+            
+        }
+
+    }
+}

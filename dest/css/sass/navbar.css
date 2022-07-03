@@ -1,0 +1,1 @@
+.navbar{background-color:#cb0d1f}.navbar li{display:inline-block;margin-right:3rem;padding:13px;box-sizing:border-box;height:54px}.navbar a{color:#fff;font-size:16px;font-weight:bold;text-decoration:none;text-transform:uppercase}@media screen and (max-width: 768px){.navbar-nav{display:none}}@media screen and (max-width: 1024px){.navbar li{padding-left:8px}}

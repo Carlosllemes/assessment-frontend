@@ -1,0 +1,25 @@
+.section-aside {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    .aside-grid { grid-area: 1 / 1 / 6 / 2; }
+    .image { grid-area: 1 / 2 / 3 / 6; }
+    .text { grid-area: 3 / 2 / 6 / 6; }
+}
+
+
+@media only screen  and (max-width:768px) {
+    .image { 
+        grid-area: 1/1/2/6 !important;
+        padding: 10px;
+        box-sizing: border-box; 
+    }
+    .text {
+         grid-area:2/1/6/6 !important ;
+         padding: 10px;
+         box-sizing: border-box; 
+    }
+}
