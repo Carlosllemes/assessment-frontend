@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
 
-  <title>Home WebJump</title>
+  <title>Calçados WebJump</title>
 </head>
 <header>
   <!– Begin top ->
@@ -99,7 +99,7 @@
       </div>
     </aside>
     <div class="text product-section grid-modify">
-      <h2>Sapatos</h2>
+      <h2>Calçados</h2>
       <hr>
       <div class="options d-flex justify-content-between">
         <div class="icon">
@@ -128,7 +128,7 @@
     import product from '../../mock-api/V1/categories/calcados.json' assert { type: "json" }
     asideItem('.navbar-nav');
     productsCards(product,'.product-content','color')
-    createCategory(product,'.colors')
+    createCategory(product,'.colors', 'color')
   </script>
   <script>
     $(document).ready(function () {

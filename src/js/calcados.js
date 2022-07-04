@@ -56,17 +56,25 @@ function getFilterAPI(obj) {
 }
 
 // create filter itens 
-function createItemFilter(item){
+function createItemFilter(item, type){
+    if (type === 'color'){
     const div = document.createElement('div');
     div.setAttribute('class', item.toLowerCase())
     return div;
+    }
+    const ul = document.createElement('ul');
+    const li = document.createElement('li');
+    li.setAttribute('data-gender', item.toLowerCase())
+    ul.append(li)
+    
+    return ul;
 }
 
 // append itens of createFilter function with element
-export function createCategory(obj,selector) {
+export function createCategory(obj,selector, type) {
     const list = getFilterAPI(obj);
     list.map((item) => {
-        return appendItem(createItemFilter(item), selector)
+        return appendItem(createItemFilter(item, type), selector)
     })
 }
 

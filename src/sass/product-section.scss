@@ -7,31 +7,31 @@
         margin-bottom: 1rem;
     }
 
-    i {
-        font-size: $large-font-size;
-        margin-right: 5px;
-        margin-top: 5px;
-    }
+    .options {
+        display: flex;
+        justify-content: space-between;
 
-    label {
-        font-size: $small-font-size;
-        color: $gray-color;
-    }
-
-    select {
-        margin-top: 5px;
-        width: 216px;
-        border: $main-border;
-        font-size: 14px;
-        padding: 2px;
-        box-sizing: border-box;
-
-        option {
-            color: red;
+        i {
+            font-size: $large-font-size;
+            margin-right: 5px;
+            margin-top: 5px;
         }
+
+        label {
+            font-size: $small-font-size;
+            color: $gray-color;
+        }
+
+        select {
+            margin-top: 5px;
+            width: 216px;
+            border: $main-border;
+            font-size: 14px;
+            padding: 2px;
+            box-sizing: border-box;
+        }
+
     }
-
-
     .product-content {
         margin-top: 2rem;
         display: flex;
@@ -41,43 +41,44 @@
         box-sizing: border-box;
 
         .cardProduct {
-            margin-top: 5px;
+            margin-bottom: 2rem;
             text-align: center;
             height: 365px;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             text-transform: uppercase;
-            
-            p{
+
+            p {
                 font-size: 21px;
                 font-weight: bolder;
-                color:$subtitle-color;
+                color: $subtitle-color;
             }
 
-            .price-content{
+            .price-content {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: row-reverse;
 
-                :nth-child(2){
+                :nth-child(2) {
                     font-size: $medium-font-size;
                     color: $gray-color;
                     margin-right: 10px;
                     text-decoration: line-through;
                 }
             }
-            
-            figure{
-                figcaption{
+
+            figure {
+
+                figcaption {
                     margin-top: 10px;
                     color: $dark-gray-color;
                     font-size: $medium-font-size;
                 }
             }
-            
-            a{
+
+            a {
                 display: block;
                 background-color: $primary-color;
                 padding: 10px;
@@ -92,14 +93,39 @@
 
             img {
                 border: $main-border;
-                object-fit: cover;
-                display: block;
-                width: 232px;
-                height: 232px;
+                object-fit: contain;
+                width: 250px;
+                height: 250px;
                 padding: 5px;
             }
-            
+
         }
 
+    }
+
+    @media screen and (min-device-width: 320px) and (max-device-width: 767px) {
+
+        h2{
+            text-align: center;
+        }
+        .product-content{
+            justify-content: space-around;
+        }
+        
+        .price-content{
+            flex-direction: column-reverse !important;
+        }
+        .cardProduct{
+            a{
+                display: none !important;
+            }
+        }
+        .options {
+            .icon {
+                display: none;
+            }
+
+            justify-content: center;
+        }
     }
 }

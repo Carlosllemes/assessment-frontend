@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
 
-  <title>Home WebJump</title>
+  <title>Home Calças</title>
 </head>
 <header>
   <!– Begin top ->
@@ -84,24 +84,25 @@
         </div>
       </div>
       <div class="mt-1">
-        <h3>Cores</h3>
-        <div class="colors mt-1">
+        <h3>Gênero</h3>
+        <div class="gender mt-1">
         
         </div>
         <div class="types mt-1">
           <h3>Tipos</h3>
           <div class="mt-1">
-            <p>Roupas</p>
-            <p>Sapatos</p>
-            <p>Acessórios</p>
+              <p>Corrida</p>
+              <p>Caminhada</p>
+              <p>Casual</p>
+              <p>Social</p>
           </div>
         </div>
       </div>
     </aside>
     <div class="text product-section grid-modify">
-      <h2>Sapatos</h2>
+      <h2>Calças</h2>
       <hr>
-      <div class="options d-flex justify-content-between">
+      <div class="options">
         <div class="icon">
           <span class="active"><i class="fa fa-th fa-2x" aria-hidden="true"></i></span>
           <span class="disabled"> <i class="fa fa-list fa-2x" aria-hidden="true"></i></span>
@@ -128,7 +129,7 @@
     import product from '../../mock-api/V1/categories/calcas.json' assert { type: "json" }
     asideItem('.navbar-nav');
     productsCards(product,'.product-content','gender')
-    createCategory(product,'.colors')
+    createCategory(product,'.gender', 'gender')
   </script>
   <script>
     $(document).ready(function () {

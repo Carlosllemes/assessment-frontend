@@ -8,18 +8,12 @@
     .aside-grid { grid-area: 1 / 1 / 6 / 2; }
     .image { grid-area: 1 / 2 / 3 / 6; }
     .text { grid-area: 3 / 2 / 6 / 6; }
-}
 
-
-@media only screen  and (max-width:768px) {
-    .image { 
-        grid-area: 1/1/2/6 !important;
-        padding: 10px;
-        box-sizing: border-box; 
-    }
-    .text {
-         grid-area:2/1/6/6 !important ;
-         padding: 10px;
-         box-sizing: border-box; 
+    @media screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    display: block;
+    .bg-gray{
+        height: 120px;
     }
 }
+}
+

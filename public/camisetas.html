@@ -101,7 +101,7 @@
     <div class="text product-section grid-modify">
       <h2>Sapatos</h2>
       <hr>
-      <div class="options d-flex justify-content-between">
+      <div class="options">
         <div class="icon">
           <span class="active"><i class="fa fa-th fa-2x" aria-hidden="true"></i></span>
           <span class="disabled"> <i class="fa fa-list fa-2x" aria-hidden="true"></i></span>
@@ -128,7 +128,7 @@
     import product from '../../mock-api/V1/categories/camisetas.json' assert { type: "json" }
     asideItem('.navbar-nav');
     productsCards(product,'.product-content', 'color')
-    createCategory(product,'.colors')
+    createCategory(product,'.colors', 'color')
   </script>
   <script>
     $(document).ready(function () {
