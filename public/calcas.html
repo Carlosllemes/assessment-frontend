@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
 
-  <title>Home Calças</title>
+  <title>Calças WebJump</title>
 </head>
 <header>
   <!– Begin top ->
@@ -70,39 +70,37 @@
   <nav class="breadCumb container">
     <a class="disabled" href="index.html" alt="Página inicial" title="Página Inicial">Página Inicial</a> <span> >
     </span>
-    <a class="active" href="index.html" alt="Calçados" title="Calçados">Calçados</a>
+    <a class="active" href="index.html" alt="Calças" title="Calças">Calças</a>
   </nav>
   <section class="container section-aside">
     <aside class="aside-grid filter">
       <h2>FILTRE POR</h2>
       <div class="category mt-2">
         <h3>CATEGORIAS</h3>
-        <div class="mt-1">
-         <ul class="category-filter">
-
-         </ul>
-        </div>
+        <p>Roupas</p>
+        <p>Sapatos</p>
+        <p>Acessórios</p>
       </div>
       <div class="mt-1">
         <h3>Gênero</h3>
-        <div class="gender mt-1">
-        
+        <div class="colors">
+
         </div>
-        <div class="types mt-1">
-          <h3>Tipos</h3>
-          <div class="mt-1">
-              <p>Corrida</p>
-              <p>Caminhada</p>
-              <p>Casual</p>
-              <p>Social</p>
-          </div>
+
+      </div>
+      <div class="types mt-1">
+        <h3>Tipos</h3>
+        <div>
+          <p>Roupas</p>
+          <p>Sapatos</p>
+          <p>Acessórios</p>
         </div>
       </div>
     </aside>
     <div class="text product-section grid-modify">
       <h2>Calças</h2>
       <hr>
-      <div class="options">
+      <div class="options d-flex justify-content-between">
         <div class="icon">
           <span class="active"><i class="fa fa-th fa-2x" aria-hidden="true"></i></span>
           <span class="disabled"> <i class="fa fa-list fa-2x" aria-hidden="true"></i></span>
@@ -116,7 +114,7 @@
       </div>
       <div class="product-content">
 
-      </div>    
+      </div>
     </div>
   </section>
 </body>
@@ -127,15 +125,24 @@
     import { asideItem } from '../src/js/menu_item.js'
     import { productsCards, createCategory } from '../src/js/calcados.js'
     import product from '../../mock-api/V1/categories/calcas.json' assert { type: "json" }
+
     asideItem('.navbar-nav');
-    productsCards(product,'.product-content','gender')
-    createCategory(product,'.gender', 'gender')
-  </script>
-  <script>
-    $(document).ready(function () {
-      $('#menu-nav').slicknav();
+    productsCards(product, '.product-content', 'gender')
+    createCategory(product, '.colors', 'gender')
+
+
+    $('[data-gender]').on('click', function () {
+      let a = $(this)[0].dataset.gender
+      $('[data-color]').each(function () {
+        $(this)[0].dataset.color != a ? $(this).hide("slow"): $(this).show("slow")
+      })
     });
+
+
+
+
   </script>
+
 </footer>
 
 </html>

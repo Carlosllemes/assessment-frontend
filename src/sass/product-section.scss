@@ -33,21 +33,16 @@
 
     }
     .product-content {
-        margin-top: 2rem;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
+        justify-content: space-around;
 
         .cardProduct {
-            margin-bottom: 2rem;
             text-align: center;
-            height: 365px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
             text-transform: uppercase;
+            margin-top: 10px;
 
             p {
                 font-size: 21px;
@@ -58,7 +53,6 @@
             .price-content {
                 display: flex;
                 justify-content: center;
-                align-items: center;
                 flex-direction: row-reverse;
 
                 :nth-child(2) {

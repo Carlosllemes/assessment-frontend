@@ -56,6 +56,19 @@
             "color": "Rosa"
           }
       ]
+    },
+    {
+      "id": 4,
+      "sku": "sku-4",
+      "path": "camiseta-rosa",
+      "name": "Camiseta Rosa",
+      "image": "media/shirt-4.jpg",
+      "price": 52.0,
+      "filter": [
+          {
+            "color": "Preta"
+          }
+      ]
     }
   ]
 }

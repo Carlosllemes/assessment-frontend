@@ -13,7 +13,7 @@ function createCardProduct(img, nameProduct, price, id, specialPrice, filter) {
     const priceContent = document.createElement('div')
     
     box.setAttribute('class', 'cardProduct')
-    box.setAttribute('data-color', filter.toLowerCase())
+    box.setAttribute('data-color', (filter.toLowerCase()))
     image.setAttribute('src', img)
     image.setAttribute('alt', nameProduct)
     image.setAttribute('title', nameProduct)
@@ -42,11 +42,12 @@ function createCardProduct(img, nameProduct, price, id, specialPrice, filter) {
     return box
 }
 // get items value of  filter of API and remove duplicates
-function getFilterAPI(obj) {
+ function getFilterAPI(obj, type) {
     const arr = [];
+    
     obj.items.map((item) => {
         item.filter.map((filter) => {
-            arr.push(filter.color)
+            type == 'color' ? arr.push(filter.color):arr.push(filter.gender)
         })
     })
     const newArray = arr.filter(function (elem, pos, self) {
@@ -61,27 +62,31 @@ function createItemFilter(item, type){
     const div = document.createElement('div');
     div.setAttribute('class', item.toLowerCase())
     return div;
+    }else{
+        const p = document.createElement('p');
+        p.textContent = item;
+        p.setAttribute('data-gender', item.toLowerCase())
+        p.setAttribute('class', 'gender')
+        return p;
     }
-    const ul = document.createElement('ul');
-    const li = document.createElement('li');
-    li.setAttribute('data-gender', item.toLowerCase())
-    ul.append(li)
-    
-    return ul;
+   
 }
 
 // append itens of createFilter function with element
-export function createCategory(obj,selector, type) {
-    const list = getFilterAPI(obj);
-    list.map((item) => {
+export  function createCategory(obj,selector, type) {
+    const list =  getFilterAPI(obj, type);
+        list.map((item) => {
         return appendItem(createItemFilter(item, type), selector)
     })
 }
-
 // append itens of createFilter function with element
 export function productsCards(obj,selector, nameFilter) {
     obj.items.map((item) => {
-        const filter = `${item.filter[0]}.${nameFilter}`
-        return appendItem(createCardProduct(item.image, item.name, item.price, item.id, item.specialPrice, filter), selector)
+        if(nameFilter ==='gender'){
+           return appendItem(createCardProduct(item.image, item.name, item.price, item.id, item.specialPrice, item.filter[0].gender), selector)
+        }else{
+            return appendItem(createCardProduct(item.image, item.name, item.price, item.id, item.specialPrice, item.filter[0].color), selector)
+
+        }
     })
 }
