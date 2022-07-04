@@ -21,93 +21,85 @@
 
   <title>Calças WebJump</title>
 </head>
-<header>
-  <!– Begin top ->
-    <div class="topo container-fluid">
-      <div class="container d-flex justify-content-end">
-        <a alt="Acesse sua conta" href="#">Acesse sua conta</a>
-        <span>ou</span>
-        <a alt="Cadastre-se" href="#">Cadastre-se</a>
-      </div>
-    </div>
-    <!– End top ->
-
-      <!– Begin Logo Search ->
-        <div class="logo">
-          <div class="container">
-            <figure>
-              <img src="./media/logo.png" alt="">
-              <!– I dont finded the logo, so i maked a print screen ->
-            </figure>
-            <form>
-              <input type="search">
-              <button type="submit">
-                Buscar
-              </button>
-            </form>
-          </div>
-        </div>
-        <!– End Logo Search ->
-
-          <!– Begin nav ->
-            <div class="container-fluid">
-              <nav id="menu-nav">
-                <ul>
-                </ul>
-              </nav>
-              <nav class="navbar">
-                <div class="container">
-                  <ul class="navbar-nav">
-                  </ul>
-                </div>
-              </nav>
-            </div>
-            <!– End nav ->
-
-</header>
 
 <body>
+  <header>
+    <div class="topo container-fluid">
+      <div class="container d-flex justify-content-end">
+        <a title="Acesse sua conta" href="#">Acesse sua conta</a>
+        <span>ou</span>
+        <a title="Cadastre-se" href="#">Cadastre-se</a>
+      </div>
+    </div>
+    <div class="logo">
+      <div class="container">
+        <figure>
+          <img src="./media/logo.png" alt="WebJump">
+        </figure>
+        <form>
+          <input type="search">
+          <button type="submit">
+            Buscar
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <nav id="menu-nav">
+        <ul>
+        </ul>
+      </nav>
+      <nav class="navbar">
+        <div class="container">
+          <ul class="navbar-nav">
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
   <nav class="breadCumb container">
-    <a class="disabled" href="index.html" alt="Página inicial" title="Página Inicial">Página Inicial</a> <span> >
+    <a class="disabled" href="index.html" title="Página Inicial">Página Inicial</a> <span> >
     </span>
-    <a class="active" href="index.html" alt="Calças" title="Calças">Calças</a>
+    <a class="active" href="calcados.html" title="Calças">Calças</a>
   </nav>
   <section class="container section-aside">
     <aside class="aside-grid filter">
       <h2>FILTRE POR</h2>
       <div class="category mt-2">
         <h3>CATEGORIAS</h3>
-        <p>Roupas</p>
-        <p>Sapatos</p>
-        <p>Acessórios</p>
-      </div>
-      <div class="mt-1">
-        <h3>Gênero</h3>
-        <div class="colors">
-
-        </div>
-
-      </div>
-      <div class="types mt-1">
-        <h3>Tipos</h3>
-        <div>
+        <div class="mt-1 category-filter">
           <p>Roupas</p>
           <p>Sapatos</p>
           <p>Acessórios</p>
+        </div>
+        <div class="mt-1">
+          <h3>Gênero</h3>
+          <div class="colors mt-1">
+
+          </div>
+          <div class="types mt-1">
+            <h3>Tipos</h3>
+            <div class="mt-1">
+              <p>Corrida</p>
+              <p>Caminhada</p>
+              <p>Casual</p>
+              <p>Social</p>
+            </div>
+          </div>
         </div>
       </div>
     </aside>
     <div class="text product-section grid-modify">
       <h2>Calças</h2>
       <hr>
-      <div class="options d-flex justify-content-between">
+      <div class="options">
         <div class="icon">
           <span class="active"><i class="fa fa-th fa-2x" aria-hidden="true"></i></span>
           <span class="disabled"> <i class="fa fa-list fa-2x" aria-hidden="true"></i></span>
         </div>
         <div class="input">
           <label for="cars">ORDENAR POR</label>
-          <select id="cars" value="Ordenar por">
+          <select id="cars">
             <option value="selecione">Selecione</option>
           </select>
         </div>
@@ -118,31 +110,24 @@
     </div>
   </section>
 </body>
+
 <footer class="container">
   <script src="../src/js/jquery-3.6.0.min.js"></script>
   <script src="../dest/slicknav/jquery.slicknav.js"></script>
   <script type="module">
     import { asideItem } from '../src/js/menu_item.js'
-    import { productsCards, createCategory } from '../src/js/calcados.js'
+    import { productsCards, createCategory, filterAside } from '../src/js/calcados.js'
     import product from '../../mock-api/V1/categories/calcas.json' assert { type: "json" }
-
     asideItem('.navbar-nav');
     productsCards(product, '.product-content', 'gender')
     createCategory(product, '.colors', 'gender')
-
-
-    $('[data-gender]').on('click', function () {
-      let a = $(this)[0].dataset.gender
-      $('[data-color]').each(function () {
-        $(this)[0].dataset.color != a ? $(this).hide("slow"): $(this).show("slow")
-      })
-    });
-
-
-
-
+    filterAside('data-gender', 'data-color')
   </script>
-
+  <script>
+    $(document).ready(function () {
+      $('#menu-nav').slicknav();
+    });
+  </script>
 </footer>
 
 </html>

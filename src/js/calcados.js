@@ -60,6 +60,7 @@ function createCardProduct(img, nameProduct, price, id, specialPrice, filter) {
 function createItemFilter(item, type){
     if (type === 'color'){
     const div = document.createElement('div');
+    div.setAttribute('data-color-a', item.toLowerCase())
     div.setAttribute('class', item.toLowerCase())
     return div;
     }else{
@@ -90,3 +91,14 @@ export function productsCards(obj,selector, nameFilter) {
         }
     })
 }
+
+
+export function filterAside (dataAside, dataProduct){
+    $(`[${dataAside}]`).on('click', function () {
+      let value = $(this).attr(dataAside)
+      console.log(value)
+      $(`[${dataProduct}]`).each(function () {
+          $(this).attr(dataProduct) != value ? $(this).hide("slow"): $(this).show("slow")
+      })
+    });
+  }

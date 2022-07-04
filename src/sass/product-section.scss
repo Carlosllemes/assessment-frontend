@@ -37,12 +37,14 @@
         flex-wrap: wrap;
         align-items: center;
         box-sizing: border-box;
-        justify-content: space-around;
+        justify-content: center;
 
         .cardProduct {
             text-align: center;
             text-transform: uppercase;
             margin-top: 10px;
+            margin-right: calc(4% - 2rem);
+
 
             p {
                 font-size: 21px;
