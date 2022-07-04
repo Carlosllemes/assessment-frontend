@@ -1,6 +1,5 @@
 @import '_variables';
 .aside-grid{
-    background-color: $ligth-gray-color;
     nav{
         margin-top: 20px;
         display: flex;
@@ -19,5 +18,7 @@
     .aside-grid{
         display: none;
     }
+
+
 
 }
